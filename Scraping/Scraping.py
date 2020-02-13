@@ -61,4 +61,3 @@ class Ramen_db:
 #インスタンスを作成
 base_url = "https://ramendb.supleks.jp"
 ramen_db = Ramen_db(base_url, begin_page=1, prefecture = None, tag = 3)
-#test 20200212
