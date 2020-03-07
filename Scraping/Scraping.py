@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import requests
+1import requests
 from bs4 import BeautifulSoup
 import pandas as pd
 
@@ -61,4 +61,3 @@ class Ramen_db:
 #インスタンスを作成
 base_url = "https://ramendb.supleks.jp"
 ramen_db = Ramen_db(base_url, begin_page=1, prefecture = None, tag = 3)
-#aaaa
