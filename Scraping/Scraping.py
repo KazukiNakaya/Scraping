@@ -43,17 +43,6 @@ class Ramen_db:
         print("データフレーム作成")
         print(f'経過時間：{scraping_time}s')
 
-
-        #csvファイルに出力
-        print("csvファイル出力中")
-        try:
-            os.makedirs("./output")
-        except FileExistsError:
-            pass
-        now = datetime.datetime.now()
-        filename = './output/ramen_' + now.strftime('%Y%m%d_%H%M%S') + '.csv'
-        self.df.to_csv(filename, encoding='utf_8_sig')
-
     def get_list_url(self, base_url, page, prefecture = None, tag=3): 
 
         #開始ページ
@@ -127,3 +116,13 @@ class Ramen_db:
 #インスタンスを作成
 base_url = "https://ramendb.supleks.jp"
 ramen_db = Ramen_db(base_url, begin_page=1, prefecture = None, tag = 3)
+
+#csvファイルに出力
+print("csvファイル出力中")
+try:
+    os.makedirs("./output")
+except FileExistsError:
+    pass
+now = datetime.datetime.now()
+filename = './output/ramen_' + now.strftime('%Y%m%d_%H%M%S') + '.csv'
+ramen_db.df.to_csv(filename, encoding='utf_8_sig')
